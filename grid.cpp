@@ -15,7 +15,7 @@ Grid::Grid()
   {
     for(int j(0); j<60; j++)
     {
-      grid_array[i][j] = ' ';
+      grid_array[i][j] = ' '; //Set all chars to ' '
     }
   }
 }
@@ -34,7 +34,7 @@ void Grid::print()
 
 void Grid::set(int x, int y, char put)
 {
-  if(x < 0 || x > 59) return;
-  if(y < 0 || y > 23) return;
+  if(x < 0 || x > 59) return; //Sets boundaries
+  if(y < 0 || y > 23) return; //Avoids Seg faults.
   *(*(grid_array+y)+x) = put;
 }
